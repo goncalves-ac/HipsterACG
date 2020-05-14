@@ -1,0 +1,245 @@
+/* Aula inicial :D */
+/* O * é o reset do CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*começa a contar o tamanho a partir da borda interna*/
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("../imagem/background-body.png");
+    background-color: #000;
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-y: 0;
+    font-family: 'Courier Prime', monospace;
+    font-size: 20px;
+/* background-size: altura largura - ex: auto 100vh */
+}
+
+body::-webkit-scrollbar { /* estabelece a espessura da barra de rolagem */
+    width: 15px;
+} 
+  
+body::-webkit-scrollbar-thumb {    /* Muda a cor da barra de rolagem */
+    background-image: linear-gradient( -0.2turn, #662e9b, #ea3546, #f86624, #f9c80e);   
+}
+
+/* Se a tela tiver pelo menos 400 px vai carregar os estilo */
+/* BreakPoint */  
+@media (max-width: 700px) {
+    body {
+        background-position: center;
+        background-position-y: 0;
+    }
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bolder;
+    display: block;
+    padding: 10px;
+    margin: 10px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    color: #f86624;
+    background-color: #000;
+    border-radius: 10px;
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    filter: blur(1px);
+}
+
+.menu {
+    background-image: linear-gradient( -0.2turn, #662e9b, #ea3546, #f86624, #f9c80e);
+    border-radius: 0px 0px 10px 10px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 2px;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu li {
+    list-style: none;
+    font-size: 20px;
+}
+
+.site-title {
+    color: #f9c80e;
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Indie Flower', cursive;
+}
+
+.site-subtitle {
+    color: #ea3546;
+    text-align: center;
+    font-style: italic;
+    font-family: 'The Girl Next Door', cursive;
+    font-size: 2em;
+}
+
+.site-subtitle span {
+    color: #f9c80e;
+}
+
+.portifolio {
+    background-color: #1e110e;
+    padding: 2em;
+    height: 100vh;
+}
+
+.portifolio .grid {
+    display: grid;
+    gap: 2em; /* Definir espaçamento entre cada coluna ou linha */
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    align-content: center;
+    height: 70vh;
+}
+
+@media (max-width: 1000px) {
+    .portifolio .grid {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media (max-width: 650px) {
+    .portifolio .grid {
+        grid-template-columns: auto;
+    }
+}
+
+.portifolio figure {
+    text-align: center;
+}
+
+.img-portifolio {
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.portifolio h2 {
+    font-family: 'The Girl Next Door', cursive;
+    color: #f9c80e;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 2.5em;
+}
+
+.portifolio span {
+    color: #ea3546;
+}
+
+hr {
+    color: #fff;
+    background-image: linear-gradient( -0.2turn, #662e9b, #ea3546, #f86624, #f9c80e);
+    height: 2.5px;
+    margin-bottom: 20px;
+}
+
+.portifolio figcaption {
+    font-size: 25px;
+    line-height: 2.5em;
+}
+
+figure {
+    text-align: center;
+
+}
+
+figure img {
+    width: 80%;
+    border: 2px solid #f86624;
+}
+
+figcaption {
+    color: #FFF;
+}
+
+.anacg {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: space-around;
+    align-content: center;
+    height: 100vh;
+}
+
+.anacg div {
+    text-align: center;
+    align-items: center;
+}
+
+.anacg img {
+    width: 70%;
+    border: 3px solid #f9c80e;
+    border-radius: 10%;
+}
+
+.redes-sociais {
+    background-image: linear-gradient(-0.2turn, #662e9b80, #ea354680, #f8662480, #f9c80e80);
+    border-radius: 10%;
+    margin: 10%;
+    padding-top: 10%;
+}
+
+.redes-sociais h2 {
+    padding-bottom: 40px;
+    color: #f9c80e;
+}
+
+.redes-sociais span {
+    color: #ea3546;
+}
+.redes-sociais img {
+    width: 40%;
+}
+
+.redes-sociais .grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.redes-sociais .grid img{
+    border: none;
+}
+
+
+/* 
+CORES --> AMARELO : #f9c80e;
+          LARANJA : #f86624;
+          ROSA : #ea3546;
+          ROXO : #662e9b;
+          AZUL : #43bccd;
+          CINZA : #252422;
+
+REGRAS DO CSS FONTS:
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Courier Prime', monospace;
+    font-family: 'The Girl Next Door', cursive;
+*/
