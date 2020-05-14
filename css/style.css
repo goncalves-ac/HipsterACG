@@ -1,7 +1,9 @@
+/* Aula inicial :D */
+/* O * é o reset do CSS */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box; /*começa a contar o tamanho a partir da borda interna*/
 }
 
 html{
@@ -17,13 +19,14 @@ body {
     background-position-y: 0;
     font-family: 'Courier Prime', monospace;
     font-size: 20px;
+/* background-size: altura largura - ex: auto 100vh */
 }
 
-body::-webkit-scrollbar { 
+body::-webkit-scrollbar { /* estabelece a espessura da barra de rolagem */
     width: 15px;
 } 
   
-body::-webkit-scrollbar-thumb {    
+body::-webkit-scrollbar-thumb {    /* Muda a cor da barra de rolagem */
     background-image: linear-gradient( -0.2turn, #662e9b, #ea3546, #f86624, #f9c80e);   
 }
 
@@ -41,12 +44,14 @@ header {
     display: block;
     padding: 10px;
     margin: 10px;
+    transition: background-color, color, 2s;
+    /* transition: background-color 5s, color, 2s; */
 }
 
 .menu a:hover {
     text-decoration: underline;
     color: #f86624;
-    background-color: #000;
+    background-color: #00000080;
     border-radius: 10px;
     display: block;
     padding: 10px;
@@ -59,6 +64,7 @@ header {
     border-radius: 0px 0px 10px 10px;
     position: fixed;
     top: 0;
+    z-index: 1;
     width: 100vw;
     padding: 2px;
 }
@@ -71,6 +77,24 @@ header {
 .menu li {
     list-style: none;
     font-size: 20px;
+}
+
+.titulos {
+    transform: scale(0.1) translate(50vh);
+    opacity: 0;
+
+    animation: 500ms linear 2s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo {
+    from {
+        /* colocado no .titulos então nem precisa colocar */
+        /* Pode colocar de 0% a 100% */
+    }
+    to {
+        transform: scale(1) translate(0);
+        opacity: 1;
+    }
 }
 
 .site-title {
@@ -159,7 +183,7 @@ header {
 .portifolio {
     background-color: #1e110e;
     padding: 2em;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .portifolio .grid {
@@ -205,6 +229,11 @@ figure img {
     object-position: center;
     border-radius: 10px;
     border: 2px solid #f86624;
+    transition: transform 500ms;
+}
+
+figure img:hover {
+    transform: scale(1.5);
 }
 
 figcaption {
@@ -288,7 +317,7 @@ hr {
     }
     .portifolio .grid {
         display: grid;
-        gap: 2em; 
+        gap: 2em; /* Definir espaçamento entre cada coluna ou linha */
         grid-template-columns: repeat(2, auto);
         justify-content: center;
         align-content: center;
@@ -347,6 +376,7 @@ hr {
     width: 70%;
     border: 3px solid #f9c80e;
     border-radius: 10%;
+    margin-top: 5%;
 }
 
 .redes-sociais {
@@ -354,6 +384,20 @@ hr {
     border-radius: 10%;
     margin: 10%;
     padding-top: 10%;
+}
+
+.grid a {
+    color: #000;
+    font-size: 3em;
+    padding: 5%;
+    text-decoration: none;
+    transition: text-shadow 1s;
+}
+
+.grid a:active,
+.grid a:hover {
+    text-decoration: none;
+    text-shadow: 5px 5px 10px #f9c80e;
 }
 
 .redes-sociais h2 {
@@ -364,18 +408,12 @@ hr {
 .redes-sociais span {
     color: #ea3546;
 }
-.redes-sociais img {
-    width: 40%;
-}
 
 .redes-sociais .grid{
     display: grid;
     grid-template-columns: auto auto auto;
 }
 
-.redes-sociais .grid img{
-    border: none;
-}
 
 @media (max-width: 768px) {
     .anacg {
@@ -394,9 +432,6 @@ hr {
         color: #f9c80e;
         font-size: 23px;
     }
-    .redes-sociais .grid img{
-        width: 60%;
-    }
 }
 
 @media (max-width: 650px) {
@@ -404,9 +439,6 @@ hr {
         padding-bottom: 10px;
         color: #f9c80e;
         font-size: 23px;
-    }
-    .redes-sociais .grid img{
-        width: 60%;
     }
 }
 
@@ -426,3 +458,19 @@ hr {
         width: 50%;
     }
 }
+
+
+
+/* 
+CORES --> AMARELO : #f9c80e;
+          LARANJA : #f86624;
+          ROSA : #ea3546;
+          ROXO : #662e9b;
+          AZUL : #43bccd;
+          CINZA : #252422;
+
+REGRAS DO CSS FONTS:
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Courier Prime', monospace;
+    font-family: 'The Girl Next Door', cursive;
+*/
