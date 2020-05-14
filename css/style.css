@@ -1,9 +1,7 @@
-/* Aula inicial :D */
-/* O * é o reset do CSS */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /*começa a contar o tamanho a partir da borda interna*/
+    box-sizing: border-box; 
 }
 
 html{
@@ -19,24 +17,14 @@ body {
     background-position-y: 0;
     font-family: 'Courier Prime', monospace;
     font-size: 20px;
-/* background-size: altura largura - ex: auto 100vh */
 }
 
-body::-webkit-scrollbar { /* estabelece a espessura da barra de rolagem */
+body::-webkit-scrollbar { 
     width: 15px;
 } 
   
-body::-webkit-scrollbar-thumb {    /* Muda a cor da barra de rolagem */
+body::-webkit-scrollbar-thumb {    
     background-image: linear-gradient( -0.2turn, #662e9b, #ea3546, #f86624, #f9c80e);   
-}
-
-/* Se a tela tiver pelo menos 400 px vai carregar os estilo */
-/* BreakPoint */  
-@media (max-width: 700px) {
-    body {
-        background-position: center;
-        background-position-y: 0;
-    }
 }
 
 header {
@@ -104,6 +92,70 @@ header {
     color: #f9c80e;
 }
 
+/* Se a tela tiver pelo menos 400 px vai carregar os estilo */
+/* BreakPoint */  
+@media (max-width: 768px) {
+    body {
+        background-position: center;
+        background-position-y: 0;
+    }
+    .site-title {
+        font-size: 2.5em;
+        font-family: 'Indie Flower', cursive;
+    }
+    .site-subtitle {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 650px) {
+    .site-title {
+        font-size: 2.5em;
+    }
+    .site-subtitle {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 500px) {
+    .site-title {
+        font-size: 2.0em;
+        font-family: 'Indie Flower', cursive;
+    }
+    .site-subtitle {
+        font-size: 1.0em;
+    }
+    .menu li {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 411px) {
+    .site-title {
+        font-size: 1.5em;
+        font-family: 'Indie Flower', cursive;
+    }
+    .site-subtitle {
+        font-size: 1em;
+    }
+    .menu li {
+        font-size: 17px;
+    }
+    .menu ul {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 375px) {
+    .menu {
+        padding: 0;
+    }
+    .menu li {
+        font-size: 12px;
+    } 
+}
+
 .portifolio {
     background-color: #1e110e;
     padding: 2em;
@@ -119,28 +171,8 @@ header {
     height: 70vh;
 }
 
-@media (max-width: 1000px) {
-    .portifolio .grid {
-        grid-template-columns: repeat(2, auto);
-    }
-}
-
-@media (max-width: 650px) {
-    .portifolio .grid {
-        grid-template-columns: auto;
-    }
-}
-
 .portifolio figure {
     text-align: center;
-}
-
-.img-portifolio {
-    height: 180px;
-    width: 180px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 10px;
 }
 
 .portifolio h2 {
@@ -156,13 +188,6 @@ header {
     color: #ea3546;
 }
 
-hr {
-    color: #fff;
-    background-image: linear-gradient( -0.2turn, #662e9b, #ea3546, #f86624, #f9c80e);
-    height: 2.5px;
-    margin-bottom: 20px;
-}
-
 .portifolio figcaption {
     font-size: 25px;
     line-height: 2.5em;
@@ -174,12 +199,135 @@ figure {
 }
 
 figure img {
-    width: 80%;
+    height: 280px;
+    width: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
     border: 2px solid #f86624;
 }
 
 figcaption {
     color: #FFF;
+}
+
+hr {
+    color: #fff;
+    background-image: linear-gradient( -0.2turn, #662e9b, #ea3546, #f86624, #f9c80e);
+    height: 2.5px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+    .portifolio .grid {
+        grid-template-columns: repeat(2, auto);
+    }
+    figure img {
+        height: 180px;
+        width: 180px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        border: 2px solid #f86624;
+        align-content: center;
+    }
+    .portifolio figcaption {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portifolio .grid {
+        grid-template-columns: repeat(2, auto);;
+    }
+    figure img {
+        height: 140px;
+        width: 140px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        border: 2px solid #f86624;
+        align-content: center;
+    }
+    .portifolio h2 {
+        padding-top: 15px;
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 650px) {
+    .portifolio .grid {
+        grid-template-columns: repeat(2, auto);;
+    }
+    figure img {
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        border: 2px solid #f86624;
+        align-content: center;
+    }
+    .portifolio h2 {
+        padding-top: 10px;
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 411px) {
+    .portifolio .grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .portifolio figcaption {
+        font-size: 18px;
+    }
+    .portifolio h2 {
+        font-size: 1.2em;
+    }
+    .portifolio .grid {
+        display: grid;
+        gap: 2em; 
+        grid-template-columns: repeat(2, auto);
+        justify-content: center;
+        align-content: center;
+    }
+    .portifolio h2 {
+        padding-top: 80px;
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 375px) {
+    
+    .portifolio figcaption {
+        font-size: 12px;
+    }
+    .portifolio h2 {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        padding-top: 80px;
+        font-size: 1em;
+    }
+    hr {
+        margin-top: 0px;
+    }
+    
+}
+@media (max-width: 320px) {
+    
+    .portifolio figcaption {
+        font-size: 12px;
+    }
+    .portifolio h2 {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        font-size: 1em;
+    }
+    hr {
+        margin-top: 0px;
+    }
+    
 }
 
 .anacg {
@@ -229,17 +377,52 @@ figcaption {
     border: none;
 }
 
+@media (max-width: 768px) {
+    .anacg {
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+    }
+    .anacg img {
+        width: 60%;
+    }   
+    .redes-sociais {
+        margin-top: 0;
+    } 
+    .redes-sociais h2 {
+        padding-bottom: 10px;
+        color: #f9c80e;
+        font-size: 23px;
+    }
+    .redes-sociais .grid img{
+        width: 60%;
+    }
+}
 
-/* 
-CORES --> AMARELO : #f9c80e;
-          LARANJA : #f86624;
-          ROSA : #ea3546;
-          ROXO : #662e9b;
-          AZUL : #43bccd;
-          CINZA : #252422;
+@media (max-width: 650px) {
+    .redes-sociais h2 {
+        padding-bottom: 10px;
+        color: #f9c80e;
+        font-size: 23px;
+    }
+    .redes-sociais .grid img{
+        width: 60%;
+    }
+}
 
-REGRAS DO CSS FONTS:
-    font-family: 'Indie Flower', cursive;
-    font-family: 'Courier Prime', monospace;
-    font-family: 'The Girl Next Door', cursive;
-*/
+@media (max-width: 500px) {
+    .redes-sociais h2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 411px) {
+    .anacg {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .anacg img {
+        width: 50%;
+    }
+}
