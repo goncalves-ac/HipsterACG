@@ -222,12 +222,16 @@ header {
 .envolve-portifolio {
     min-height: 100vh;
 }
+
 .portifolio {
     background-color: #000;
     padding: 2em;
     /*min-height: 100vh;*/
 }
 
+.portifolio a {
+    font-size: 2em;
+}
 
 .portifolio .grid {
     display: grid;
@@ -253,7 +257,6 @@ header {
 
 figure {
     text-align: center;
-
 }
 
 .envolve-portifolio img {
@@ -284,6 +287,8 @@ figure {
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s;
+
+    text-align: center;
 }
 
 .flip-card:hover .card{
@@ -309,9 +314,14 @@ figure {
     transform: rotateY(180deg);
 }
 
-.card-back h3 {
+.card-back h3 a{
     color: #FFF;
-    font-size: 22px;
+    font-size: 1em;
+}
+
+.card-back .construcao {
+    font-size: 0.7em;
+    color: #fff;
 }
 
 .portfolio figure {
